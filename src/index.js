@@ -12,6 +12,9 @@ const dom = {
 const createTags = (tags) => {
     const currentTags = Object.values(tags).some(tag => tag);
     if (!currentTags) {
+        if (dom.tags) {
+            dom.tags.innerHTML = '';
+        }
         return;
     }
     const filtered = Object.keys(tags).filter(flag => tags[flag]);
